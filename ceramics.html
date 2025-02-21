@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Leaf - Ceramics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Falling Leaf</h1>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="ceramics.html">Ceramics</a>
+                <a href="stained-glass.html">Stained Glass</a>
+                <a href="soaps.html">Soaps & Cleansers</a>
+                <a href="cart.html">Cart <span class="nav-cart-counter" id="cart-counter">0</span></a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-item active" data-item="Ceramic Mug">
+                    <img src="images/ceramic-gray-opal.jpg" alt="Ceramic Mug">
+                    <div class="carousel-content">
+                        <h2>Ceramic Mug</h2>
+                        <p>Hand-thrown, durable stoneware.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Ceramic Bowl">
+                    <img src="images/ceramic-lava.jpg" alt="Ceramic Bowl">
+                    <div class="carousel-content">
+                        <h2>Ceramic Bowl</h2>
+                        <p>Wide, rustic design.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Ceramic Vase">
+                    <img src="images/ceramic-lava-vase.JPG" alt="Ceramic Vase">
+                    <div class="carousel-content">
+                        <h2>Ceramic Vase</h2>
+                        <p>Tall, glazed elegance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </section>
+        <section class="products">
+            <div class="product" data-item="Ceramic Mug">
+                <div class="product-images">
+                    <img src="images/ceramic-gray-opal.jpg" alt="Ceramic Mug Main" class="main-img">
+                    <img src="images/ceramic-gray-opal.jpg" alt="Ceramic Mug Angle 2" class="thumb-img">
+                    <img src="images/ceramic-gray-opal.jpg" alt="Ceramic Mug Angle 3" class="thumb-img">
+                </div>
+                <h3>Ceramic Mug</h3>
+                <p>Hand-thrown, durable stoneware - $25 (5 in stock)</p>
+                <button class="add-to-cart" data-item="Ceramic Mug" data-price="25" data-stock="5">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Ceramic Bowl">
+                <div class="product-images">
+                    <img src="images/ceramic-lava.jpg" alt="Ceramic Bowl Main" class="main-img">
+                    <img src="images/ceramic-lava.jpg" alt="Ceramic Bowl Angle 2" class="thumb-img">
+                    <img src="images/ceramic-lava.jpg" alt="Ceramic Bowl Angle 3" class="thumb-img">
+                </div>
+                <h3>Ceramic Bowl</h3>
+                <p>Wide, rustic design - $35 (3 in stock)</p>
+                <button class="add-to-cart" data-item="Ceramic Bowl" data-price="35" data-stock="3">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Ceramic Vase">
+                <div class="product-images">
+                    <img src="images/ceramic-lava-vase.JPG" alt="Ceramic Vase Main" class="main-img">
+                    <img src="images/ceramic-lava-vase.JPG" alt="Ceramic Vase Angle 2" class="thumb-img">
+                    <img src="images/ceramic-lava-vase.JPG" alt="Ceramic Vase Angle 3" class="thumb-img">
+                </div>
+                <h3>Ceramic Vase</h3>
+                <p>Tall, glazed elegance - $45 (2 in stock)</p>
+                <button class="add-to-cart" data-item="Ceramic Vase" data-price="45" data-stock="2">Add to Cart</button>
+            </div>
+        </section>
+        <div class="modal" id="product-modal">
+            <div class="modal-content">
+                <span class="close-modal">✕</span>
+                <img id="modal-image" src="" alt="">
+                <div class="modal-thumbnails">
+                    <img id="thumb-1" src="" alt="" class="modal-thumb">
+                    <img id="thumb-2" src="" alt="" class="modal-thumb">
+                    <img id="thumb-3" src="" alt="" class="modal-thumb">
+                </div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <button id="modal-add-to-cart" class="add-to-cart" data-item="" data-price="" data-stock="">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Falling Leaf. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

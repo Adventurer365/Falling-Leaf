@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Leaf - Soaps & Cleansers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Falling Leaf</h1>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="ceramics.html">Ceramics</a>
+                <a href="stained-glass.html">Stained Glass</a>
+                <a href="soaps.html">Soaps & Cleansers</a>
+                <a href="cart.html">Cart <span class="nav-cart-counter" id="cart-counter">0</span></a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-item active" data-item="Lavender Soap">
+                    <img src="images/soap-profile.JPG" alt="Lavender Soap">
+                    <div class="carousel-content">
+                        <h2>Lavender Soap</h2>
+                        <p>Calming, moisturizing bar.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Citrus Cleanser">
+                    <img src="images/soap-side.JPG" alt="Citrus Cleanser">
+                    <div class="carousel-content">
+                        <h2>Citrus Cleanser</h2>
+                        <p>Refreshing, gentle formula.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Oatmeal Soap">
+                    <img src="images/soap-top.JPG" alt="Oatmeal Soap">
+                    <div class="carousel-content">
+                        <h2>Oatmeal Soap</h2>
+                        <p>Soothing, exfoliating bar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </section>
+        <section class="products">
+            <div class="product" data-item="Lavender Soap">
+                <div class="product-images">
+                    <img src="images/soap-profile.JPG" alt="Lavender Soap Main" class="main-img">
+                    <img src="images/soap-profile.JPG" alt="Lavender Soap Angle 2" class="thumb-img">
+                    <img src="images/soap-profile.JPG" alt="Lavender Soap Angle 3" class="thumb-img">
+                </div>
+                <h3>Lavender Soap</h3>
+                <p>Calming, moisturizing bar - $10 (8 in stock)</p>
+                <button class="add-to-cart" data-item="Lavender Soap" data-price="10" data-stock="8">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Citrus Cleanser">
+                <div class="product-images">
+                    <img src="images/soap-side.JPG" alt="Citrus Cleanser Main" class="main-img">
+                    <img src="images/soap-side.JPG" alt="Citrus Cleanser Angle 2" class="thumb-img">
+                    <img src="images/soap-side.JPG" alt="Citrus Cleanser Angle 3" class="thumb-img">
+                </div>
+                <h3>Citrus Cleanser</h3>
+                <p>Refreshing, gentle formula - $15 (5 in stock)</p>
+                <button class="add-to-cart" data-item="Citrus Cleanser" data-price="15" data-stock="5">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Oatmeal Soap">
+                <div class="product-images">
+                    <img src="images/soap-top.JPG" alt="Oatmeal Soap Main" class="main-img">
+                    <img src="images/soap-top.JPG" alt="Oatmeal Soap Angle 2" class="thumb-img">
+                    <img src="images/soap-top.JPG" alt="Oatmeal Soap Angle 3" class="thumb-img">
+                </div>
+                <h3>Oatmeal Soap</h3>
+                <p>Soothing, exfoliating bar - $12 (6 in stock)</p>
+                <button class="add-to-cart" data-item="Oatmeal Soap" data-price="12" data-stock="6">Add to Cart</button>
+            </div>
+        </section>
+        <div class="modal" id="product-modal">
+            <div class="modal-content">
+                <span class="close-modal">✕</span>
+                <img id="modal-image" src="" alt="">
+                <div class="modal-thumbnails">
+                    <img id="thumb-1" src="" alt="" class="modal-thumb">
+                    <img id="thumb-2" src="" alt="" class="modal-thumb">
+                    <img id="thumb-3" src="" alt="" class="modal-thumb">
+                </div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <button id="modal-add-to-cart" class="add-to-cart" data-item="" data-price="" data-stock="">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Falling Leaf. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

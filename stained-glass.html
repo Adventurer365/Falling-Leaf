@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Leaf - Stained Glass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Falling Leaf</h1>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="ceramics.html">Ceramics</a>
+                <a href="stained-glass.html">Stained Glass</a>
+                <a href="soaps.html">Soaps & Cleansers</a>
+                <a href="cart.html">Cart <span class="nav-cart-counter" id="cart-counter">0</span></a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-item active" data-item="Stained Glass Panel">
+                    <img src="images/stained-glass-panel.jpg" alt="Stained Glass Panel">
+                    <div class="carousel-content">
+                        <h2>Stained Glass Panel</h2>
+                        <p>Colorful, leaded design.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Glass Sun Catcher">
+                    <img src="images/glass-sun-catcher.jpg" alt="Glass Sun Catcher">
+                    <div class="carousel-content">
+                        <h2>Glass Sun Catcher</h2>
+                        <p>Small, radiant piece.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-item="Stained Glass Lamp">
+                    <img src="images/stained-glass-lamp.jpg" alt="Stained Glass Lamp">
+                    <div class="carousel-content">
+                        <h2>Stained Glass Lamp</h2>
+                        <p>Elegant, glowing art.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </section>
+        <section class="products">
+            <div class="product" data-item="Stained Glass Panel">
+                <div class="product-images">
+                    <img src="images/stained-glass-panel.jpg" alt="Stained Glass Panel Main" class="main-img">
+                    <img src="images/stained-glass-panel.jpg" alt="Stained Glass Panel Angle 2" class="thumb-img">
+                    <img src="images/stained-glass-panel.jpg" alt="Stained Glass Panel Angle 3" class="thumb-img">
+                </div>
+                <h3>Stained Glass Panel</h3>
+                <p>Colorful, leaded design - $50 (4 in stock)</p>
+                <button class="add-to-cart" data-item="Stained Glass Panel" data-price="50" data-stock="4">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Glass Sun Catcher">
+                <div class="product-images">
+                    <img src="images/glass-sun-catcher.jpg" alt="Glass Sun Catcher Main" class="main-img">
+                    <img src="images/glass-sun-catcher.jpg" alt="Glass Sun Catcher Angle 2" class="thumb-img">
+                    <img src="images/glass-sun-catcher.jpg" alt="Glass Sun Catcher Angle 3" class="thumb-img">
+                </div>
+                <h3>Glass Sun Catcher</h3>
+                <p>Small, radiant piece - $20 (6 in stock)</p>
+                <button class="add-to-cart" data-item="Glass Sun Catcher" data-price="20" data-stock="6">Add to Cart</button>
+            </div>
+            <div class="product" data-item="Stained Glass Lamp">
+                <div class="product-images">
+                    <img src="images/stained-glass-lamp.jpg" alt="Stained Glass Lamp Main" class="main-img">
+                    <img src="images/stained-glass-lamp.jpg" alt="Stained Glass Lamp Angle 2" class="thumb-img">
+                    <img src="images/stained-glass-lamp.jpg" alt="Stained Glass Lamp Angle 3" class="thumb-img">
+                </div>
+                <h3>Stained Glass Lamp</h3>
+                <p>Elegant, glowing art - $80 (2 in stock)</p>
+                <button class="add-to-cart" data-item="Stained Glass Lamp" data-price="80" data-stock="2">Add to Cart</button>
+            </div>
+        </section>
+        <div class="modal" id="product-modal">
+            <div class="modal-content">
+                <span class="close-modal">✕</span>
+                <img id="modal-image" src="" alt="">
+                <div class="modal-thumbnails">
+                    <img id="thumb-1" src="" alt="" class="modal-thumb">
+                    <img id="thumb-2" src="" alt="" class="modal-thumb">
+                    <img id="thumb-3" src="" alt="" class="modal-thumb">
+                </div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <button id="modal-add-to-cart" class="add-to-cart" data-item="" data-price="" data-stock="">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Falling Leaf. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

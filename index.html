@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Leaf - Handmade Creations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Falling Leaf</h1>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="ceramics.html">Ceramics</a>
+                <a href="stained-glass.html">Stained Glass</a>
+                <a href="soaps.html">Soaps & Cleansers</a>
+                <a href="cart.html">Cart <span class="nav-cart-counter" id="cart-counter">0</span></a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-item active" data-category="ceramics">
+                    <img src="images/ceramic-gray-opal.jpg" alt="Ceramics">
+                    <div class="carousel-content">
+                        <h2>Ceramics</h2>
+                        <p>Handcrafted stoneware blending durability with rustic charm.</p>
+                        <a href="ceramics.html" class="cta-button">Explore Ceramics</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="stained-glass">
+                    <img src="images/stained-glass-panel.jpg" alt="Stained Glass">
+                    <div class="carousel-content">
+                        <h2>Stained Glass</h2>
+                        <p>Vibrant, light-catching art pieces for your space.</p>
+                        <a href="stained-glass.html" class="cta-button">Explore Stained Glass</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="soaps">
+                    <img src="images/soap-profile.JPG" alt="Soaps & Cleansers">
+                    <div class="carousel-content">
+                        <h2>Soaps & Cleansers</h2>
+                        <p>Natural, skin-loving formulas inspired by nature.</p>
+                        <a href="soaps.html" class="cta-button">Explore Soaps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Falling Leaf. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
