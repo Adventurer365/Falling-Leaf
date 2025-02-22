@@ -32,10 +32,20 @@ header {
 
 header h1 {
     color: #d4af37;
-    font-size: 1.2em; /* Smaller final size */
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 10px 0 5px; /* Space from nav, left padding */
+    margin: 0 10px 0 5px;
+}
+
+.title-link {
+    color: #d4af37; /* Matches nav links */
+    text-decoration: none; /* No underline */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.title-link:hover {
+    color: #ffffff; /* Matches nav hover */
 }
 
 .menu-toggle {

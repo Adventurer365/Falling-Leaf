@@ -292,12 +292,17 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCartDisplay();
     updateCartCounter();
 
- // Updated hamburger menu toggle with debug
+// Updated hamburger menu toggle with mobile touch support
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.header-row nav');
 if (menuToggle && nav) {
     menuToggle.addEventListener('click', function() {
-        console.log('Hamburger clicked!'); // Debug message
+        console.log('Hamburger clicked!');
+        nav.classList.toggle('active');
+    });
+    menuToggle.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevents unwanted touch behaviors
+        console.log('Hamburger tapped on mobile!');
         nav.classList.toggle('active');
     });
 }
