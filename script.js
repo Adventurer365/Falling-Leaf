@@ -104,14 +104,6 @@ if (prevBtn && nextBtn) {
 }
 
 // Modal functionality
-const modal = document.getElementById('product-modal');
-const modalImage = document.getElementById('modal-image');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalAddToCart = document.getElementById('modal-add-to-cart');
-const closeModal = document.querySelector('.close-modal');
-const thumbs = document.querySelectorAll('.modal-thumb');
-
 function openModal(element) {
     const itemName = element.getAttribute('data-item');
     const isCarousel = element.classList.contains('carousel-item');
@@ -124,19 +116,32 @@ function openModal(element) {
     const description = descriptionElement.textContent.split(' - ')[0];
     const addButton = element.querySelector('.add-to-cart');
 
-    modalImage.src = mainImg;
-    document.getElementById('thumb-1').src = thumb1;
-    document.getElementById('thumb-2').src = thumb2;
-    document.getElementById('thumb-3').src = thumb3;
-    modalTitle.textContent = itemName;
-    modalDescription.textContent = description;
-    modalAddToCart.setAttribute('data-item', itemName);
-    modalAddToCart.setAttribute('data-price', addButton.getAttribute('data-price'));
-    modalAddToCart.setAttribute('data-stock', addButton.getAttribute('data-stock'));
-    modal.classList.add('active');
+    // Define modal elements inside the function
+    const modal = document.getElementById('product-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalAddToCart = document.getElementById('modal-add-to-cart');
+    const thumbs = document.querySelectorAll('.modal-thumb');
 
-    thumbs.forEach(thumb => thumb.classList.remove('active'));
-    document.getElementById('thumb-1').classList.add('active');
+    // Only proceed if all modal elements exist
+    if (modal && modalImage && modalTitle && modalDescription && modalAddToCart && thumbs.length > 0) {
+        modalImage.src = mainImg;
+        document.getElementById('thumb-1').src = thumb1;
+        document.getElementById('thumb-2').src = thumb2;
+        document.getElementById('thumb-3').src = thumb3;
+        modalTitle.textContent = itemName;
+        modalDescription.textContent = description;
+        modalAddToCart.setAttribute('data-item', itemName);
+        modalAddToCart.setAttribute('data-price', addButton.getAttribute('data-price'));
+        modalAddToCart.setAttribute('data-stock', addButton.getAttribute('data-stock'));
+        modal.classList.add('active');
+
+        thumbs.forEach(thumb => thumb.classList.remove('active'));
+        document.getElementById('thumb-1').classList.add('active');
+    } else {
+        console.log('Modal elements not found on this page');
+    }
 }
 
 document.querySelectorAll('.carousel-item').forEach(item => {
@@ -152,27 +157,37 @@ document.querySelectorAll('.product').forEach(product => {
     });
 });
 
-thumbs.forEach(thumb => {
-    thumb.addEventListener('click', function() {
-        modalImage.src = this.src;
-        thumbs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
+// Modal thumbnail and close functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('product-modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeModal = document.querySelector('.close-modal');
+    const thumbs = document.querySelectorAll('.modal-thumb');
 
-if (closeModal) {
-    closeModal.addEventListener('click', function() {
-        modal.classList.remove('active');
-    });
-}
+    if (thumbs.length > 0 && modalImage) {
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                modalImage.src = this.src;
+                thumbs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
 
-if (modal) {
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
+    if (closeModal && modal) {
+        closeModal.addEventListener('click', function() {
             modal.classList.remove('active');
-        }
-    });
-}
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+});
 
 // Contact form submission
 const contactForm = document.getElementById("contact-form");
@@ -277,14 +292,15 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCartDisplay();
     updateCartCounter();
 
-    // Add hamburger menu toggle here
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navContainer = document.querySelector('.nav-container');
-    if (menuToggle && navContainer) {
-        menuToggle.addEventListener('click', function() {
-            navContainer.classList.toggle('active');
-        });
-    }
+ // Updated hamburger menu toggle with debug
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.header-row nav');
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function() {
+        console.log('Hamburger clicked!'); // Debug message
+        nav.classList.toggle('active');
+    });
+}
 });
 
 const styleSheet = document.styleSheets[0];
