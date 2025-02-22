@@ -166,11 +166,13 @@ if (closeModal) {
     });
 }
 
-modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
+if (modal) {
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+}
 
 // Contact form submission
 const contactForm = document.getElementById("contact-form");
@@ -240,6 +242,52 @@ document.addEventListener("DOMContentLoaded", function() {
     showItem(currentIndex);
     updateCartDisplay();
     updateCartCounter();
+});
+
+// Hamburger menu toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".add-to-cart");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            const item = this.getAttribute("data-item");
+            const price = parseFloat(this.getAttribute("data-price"));
+            const stock = parseInt(this.getAttribute("data-stock"));
+
+            const cartItem = cart.find(i => i.name === item);
+            if (cartItem) {
+                if (cartItem.quantity < stock) {
+                    cartItem.quantity++;
+                    alert(`${item} quantity updated to ${cartItem.quantity}`);
+                } else {
+                    alert(`Sorry, only ${stock} ${item}(s) in stock!`);
+                }
+            } else {
+                if (stock > 0) {
+                    cart.push({ name: item, price: price, quantity: 1, stock: stock });
+                    alert(`Added ${item} to cart`);
+                } else {
+                    alert(`Sorry, ${item} is out of stock!`);
+                }
+            }
+            saveCart();
+            updateCartDisplay();
+            updateCartCounter();
+        });
+    });
+
+    showItem(currentIndex);
+    updateCartDisplay();
+    updateCartCounter();
+
+    // Add hamburger menu toggle here
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navContainer = document.querySelector('.nav-container');
+    if (menuToggle && navContainer) {
+        menuToggle.addEventListener('click', function() {
+            navContainer.classList.toggle('active');
+        });
+    }
 });
 
 const styleSheet = document.styleSheets[0];
