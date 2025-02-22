@@ -549,6 +549,14 @@ body:has(> main > .hero) .hero {
     transition: transform 0.3s ease;
 }
 
+.blog-posts article img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
 .blog-posts article:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
