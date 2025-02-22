@@ -22,22 +22,20 @@ body {
 
 /* Header and Nav */
 header {
-    background-color: rgba(26, 60, 52, 0.7); /* Dark green, 70% opaque */
-    padding: 20px;
+    background-color: rgba(26, 60, 52, 0.7);
+    padding: 5px; /* Smaller padding to fit the row */
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(0);
-    animation: slideIn 0.5s ease-out;
 }
 
 header h1 {
-    color: #d4af37; /* Gold */
-    font-size: 2.5em;
-    text-align: center;
+    color: #d4af37;
+    font-size: 1.2em; /* Smaller final size */
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin: 0 10px 0 5px; /* Space from nav, left padding */
 }
 
 .menu-toggle {
@@ -45,11 +43,9 @@ header h1 {
     background: none;
     border: none;
     color: #d4af37;
-    font-size: 2em;
+    font-size: 1.5em; /* Slightly smaller */
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    margin-right: 10px; /* Space from edge */
 }
 
 .nav-container {
@@ -57,20 +53,16 @@ header h1 {
 }
 
 nav {
-    margin-top: 15px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 8px; /* Tighter spacing for the row */
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 8px 16px;
-    border-radius: 25px;
+    font-size: 0.9em; /* Smaller final size */
+    padding: 4px 8px; /* Smaller padding */
     transition: all 0.3s ease;
-    position: relative;
 }
 
 nav a:hover {
@@ -601,29 +593,24 @@ footer {
 /* Mobile styles */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: block; /* Show hamburger menu */
     }
 
-    .nav-container {
-        max-height: 0;
-        overflow: hidden;
+    .header-row nav {
+        display: none; /* Hide nav links by default */
         position: absolute;
-        top: 100%;
+        top: 100%; /* Below header */
         left: 0;
         right: 0;
-        background: #1a3c34;
+        background: #1a3c34; /* Dark green background */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-container.active {
-        max-height: 400px;
-    }
-
-    nav {
+    .header-row nav.active {
+        display: flex; /* Show nav when active (hamburger clicked) */
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
-        margin-top: 0;
     }
 
     nav a {
@@ -639,7 +626,7 @@ footer {
     }
 
     .hero {
-        height: calc(100vh - 95px); /* Adjust for mobile header/footer */
+        height: calc(100vh - 95px);
     }
 }
 
@@ -647,5 +634,22 @@ footer {
 @media (min-width: 769px) {
     .hero:not(body:has(> main > .hero) .hero) {
         height: 60vh; /* Maintain original height for product pages */
+    }
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads items across the row */
+    opacity: 0;
+    animation: fadeIn 2.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
     }
 }
