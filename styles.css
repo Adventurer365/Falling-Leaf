@@ -256,7 +256,7 @@ body:has(> main > .hero) .hero {
 }
 
 .product {
-    background: #1a3c34; /* Keep dark green */
+    background: linear-gradient(135deg, #1a3c34 0%, #2a5c54 100%); /* Subtle gradient */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -264,13 +264,16 @@ body:has(> main > .hero) .hero {
     transform-style: preserve-3d;
     animation: fadeInUp 0.6s ease-out forwards;
     cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
+                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
 }
 
 .product:hover {
-    transform: translateZ(20px) rotateX(5deg); /* Keep 3D lift */
-    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger gold shadow on hover */
+    transform: translateZ(20px) rotateX(5deg); /* Keep 3D tilt */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
+                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
 }
+
 .product-images {
     position: relative;
     margin-bottom: 15px;
@@ -417,18 +420,21 @@ body:has(> main > .hero) .hero {
 }
 
 .modal-content {
-    background: #1a3c34; /* Dark green */
+    background: linear-gradient(135deg, #1a3c34 0%, #2a5c54 100%); /* Subtle gradient */
     border-radius: 10px;
     padding: 20px;
     max-width: 600px;
     text-align: center;
     position: relative;
     animation: fadeInUp 0.4s ease-out;
-    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
+                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
 }
 
 .modal-content:hover {
-    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
+                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
 }
 
 .close-modal {
@@ -546,12 +552,13 @@ body:has(> main > .hero) .hero {
 }
 
 .blog-posts article {
-    background: #1a3c34; /* Dark green */
+    background: linear-gradient(135deg, #1a3c34 0%, #2a5c54 100%); /* Subtle gradient */
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
+                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
 }
 
 .blog-posts article img {
@@ -563,8 +570,9 @@ body:has(> main > .hero) .hero {
 }
 
 .blog-posts article:hover {
-    transform: translateY(-5px); /* Keep lift */
-    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger gold shadow */
+    transform: translateY(-5px); /* Matches modal lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
+                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
 }
 
 .blog-posts h3 {
