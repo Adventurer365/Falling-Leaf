@@ -256,8 +256,7 @@ body:has(> main > .hero) .hero {
 }
 
 .product {
-    background: #1a3c34;
-    border: 2px solid #d4af37;
+    background: #1a3c34; /* Keep dark green */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -265,13 +264,13 @@ body:has(> main > .hero) .hero {
     transform-style: preserve-3d;
     animation: fadeInUp 0.6s ease-out forwards;
     cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
 }
 
 .product:hover {
-    transform: translateZ(20px) rotateX(5deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transform: translateZ(20px) rotateX(5deg); /* Keep 3D lift */
+    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger gold shadow on hover */
 }
-
 .product-images {
     position: relative;
     margin-bottom: 15px;
@@ -418,14 +417,18 @@ body:has(> main > .hero) .hero {
 }
 
 .modal-content {
-    background: #1a3c34;
-    border: 2px solid #d4af37;
+    background: #1a3c34; /* Dark green */
     border-radius: 10px;
     padding: 20px;
     max-width: 600px;
     text-align: center;
     position: relative;
     animation: fadeInUp 0.4s ease-out;
+    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
+}
+
+.modal-content:hover {
+    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger shadow on hover */
 }
 
 .close-modal {
@@ -543,12 +546,12 @@ body:has(> main > .hero) .hero {
 }
 
 .blog-posts article {
-    background: #1a3c34;
-    border: 2px solid #d4af37;
+    background: #1a3c34; /* Dark green */
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5); /* Gold shadow */
 }
 
 .blog-posts article img {
@@ -560,8 +563,8 @@ body:has(> main > .hero) .hero {
 }
 
 .blog-posts article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px); /* Keep lift */
+    box-shadow: 10px 10px 25px rgba(212, 175, 55, 0.7); /* Stronger gold shadow */
 }
 
 .blog-posts h3 {
