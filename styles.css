@@ -10,14 +10,29 @@ html {
 }
 
 body {
-    background-color: #333333; /* Dark gray */
+    background: #333333 url('images/falling-leaf.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps texture in place */
+    position: relative; /* For overlay */
     color: #ffffff;
     font-family: 'Poppins', Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    min-height: 100%; /* Ensure body takes at least full viewport height */
-    display: flex; /* Use flexbox to control layout */
-    flex-direction: column; /* Stack children vertically */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Overlay to mute texture */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.8); /* Dark gray, 80% opaque */
+    z-index: -1; /* Behind content */
 }
 
 /* Header and Nav */
@@ -128,8 +143,9 @@ nav a[href="cart.html"]:hover .nav-cart-counter {
 
 /* Main content */
 main {
-    padding: 0; /* Reset for hero sections */
-    flex: 1; /* Allow main to grow and fill available space */
+    padding: 0;
+    flex: 1;
+    z-index: 1; /* Above overlay */
 }
 
 /* Hero Section (Carousel) */
@@ -264,14 +280,14 @@ body:has(> main > .hero) .hero {
     transform-style: preserve-3d;
     animation: fadeInUp 0.6s ease-out forwards;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
-                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base */
+            0 12px 25px rgba(212, 175, 55, 0.6); /* Bolder gold */
 }
 
 .product:hover {
-    transform: translateZ(20px) rotateX(5deg); /* Keep 3D tilt */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
-                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
+    transform: translateZ(20px) rotateX(5deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7),
+                0 18px 35px rgba(212, 175, 55, 0.8); /* Even bolder gold */
 }
 
 .product-images {
@@ -427,14 +443,13 @@ body:has(> main > .hero) .hero {
     text-align: center;
     position: relative;
     animation: fadeInUp 0.4s ease-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
-                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
-}
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6),
+            0 12px 25px rgba(212, 175, 55, 0.6);}
 
 .modal-content:hover {
-    transform: translateY(-5px); /* Slight lift */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
-                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7),
+                0 18px 35px rgba(212, 175, 55, 0.8);
 }
 
 .close-modal {
@@ -557,9 +572,8 @@ body:has(> main > .hero) .hero {
     padding: 20px;
     margin-bottom: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), /* Sharp base shadow */
-                0 10px 20px rgba(212, 175, 55, 0.3); /* Softer gold lift */
-}
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6),
+                0 12px 25px rgba(212, 175, 55, 0.6);}
 
 .blog-posts article img {
     width: 100%;
@@ -570,9 +584,9 @@ body:has(> main > .hero) .hero {
 }
 
 .blog-posts article:hover {
-    transform: translateY(-5px); /* Matches modal lift */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), /* Deeper base */
-                0 15px 30px rgba(212, 175, 55, 0.5); /* Bigger gold glow */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7),
+                0 18px 35px rgba(212, 175, 55, 0.8);
 }
 
 .blog-posts h3 {
@@ -582,11 +596,12 @@ body:has(> main > .hero) .hero {
 
 /* Footer */
 footer {
-    background: #1a3c34;
+    background: rgba(26, 60, 52, 0.9);
     padding: 15px;
     text-align: center;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
-    flex-shrink: 0; /* Prevent footer from shrinking */
+    flex-shrink: 0;
+    z-index: 1; /* Above overlay */
 }
 
 /* Animations */
